@@ -23,11 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if FirebaseAuthService.manager.currentUser != nil{
                window?.rootViewController = LetsMeetTabBar()
             }else {
-                 window?.rootViewController = LetsMeetTabBar()
+                 window?.rootViewController = LoginVc()
             }
              window?.makeKeyAndVisible()
         }
-    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

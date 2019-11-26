@@ -9,18 +9,17 @@
 import UIKit
 
 class LoginVc: UIViewController {
-
+//MARK: - Lifecycle
    override func viewDidLoad() {
             super.viewDidLoad()
 
             setupSubViews()
-            // Do any additional setup after loading the view.
         }
         // MARK: - UI objects
         
         lazy var pursuitGramLogo: UILabel = {
             let label = UILabel()
-            label.text = "Pursuitsgram"
+            label.text = "LetsMeet👍"
             label.font = UIFont(name: "Verdana-Bold", size: 40)
         
             label.textColor = #colorLiteral(red: 0.2564295232, green: 0.4383472204, blue: 0.8055806756, alpha: 1)
