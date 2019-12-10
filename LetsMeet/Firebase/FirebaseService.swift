@@ -66,5 +66,19 @@ class FirestoreService {
                }
            }
        }
+     func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()){
+          db.collection(FireStoreCollections.users.rawValue).getDocuments {(snapshot, error) in
+              if let error = error{
+                  completion(.failure(error))
+              }else {
+                  let posts = snapshot?.documents.compactMap({ (snapshot) -> AppUser? in
+                      let postID = snapshot.documentID
+                      let post = AppUser(from: snapshot.data(), id: postID)
+                      return post
+                  })
+                  completion(.success(posts ?? []))
+                  }
+      }
+      }
          private init () {}
 }
