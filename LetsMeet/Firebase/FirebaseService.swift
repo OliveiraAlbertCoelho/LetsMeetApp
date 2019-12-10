@@ -52,45 +52,6 @@ class FirestoreService {
             
         }
     }
-//    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
-//         var fields = post.fieldsDict
-//         fields["dateCreated"] = Date()
-//         db.collection(FireStoreCollections.posts.rawValue).addDocument(data: fields) { (error) in
-//             if let error = error {
-//                 completion(.failure(error))
-//             } else {
-//                 completion(.success(()))
-//             }
-//         }
-//     }
-//    func getAllPost(completion: @escaping (Result<[Post], Error>) -> ()){
-//        db.collection(FireStoreCollections.posts.rawValue).getDocuments {(snapshot, error) in
-//            if let error = error{
-//                completion(.failure(error))
-//            }else {
-//                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-//                    let postID = snapshot.documentID
-//                    let post = Post(from: snapshot.data(), id: postID)
-//                    return post
-//                })
-//                completion(.success(posts ?? []))
-//                }
-//    }
-//    }
-//    func getUserPosts(for UserID: String, completion: @escaping (Result<[Post],Error>) ->()) {
-//        db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: UserID).getDocuments { (snapshot, error) in
-//            if let error = error{
-//                completion(.failure(error))
-//            }else {
-//                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-//                    let postID = snapshot.documentID
-//                    let post = Post(from: snapshot.data(), id: postID)
-//                    return post
-//                })
-//                completion(.success(posts ?? []))
-//            }
-//        }
-//    }
     func getUserFromPost(creatorID: String, completion: @escaping (Result<AppUser,Error>) -> ()) {
            db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error)  in
                if let error = error {

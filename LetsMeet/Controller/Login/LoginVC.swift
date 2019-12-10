@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVc: UIViewController {
+class LoginVC: UIViewController {
 //MARK: - Lifecycle
    override func viewDidLoad() {
             super.viewDidLoad()
@@ -92,7 +92,7 @@ class LoginVc: UIViewController {
             }
         }
         @objc func showSignUp() {
-            let signupVC = SignUpVc()
+            let signupVC = SignUpVC()
             signupVC.modalPresentationStyle = .formSheet
             present(signupVC, animated: true, completion: nil)
         }
@@ -168,7 +168,7 @@ class LoginVc: UIViewController {
                 createAccount.heightAnchor.constraint(equalToConstant: 50)])
         }
     }
-    extension LoginVc: UITextFieldDelegate{
+    extension LoginVC: UITextFieldDelegate{
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
         }

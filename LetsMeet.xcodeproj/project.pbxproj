@@ -16,10 +16,10 @@
 		5037ACA3238D9A3F00067EFA /* LetsMeetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACA2238D9A3F00067EFA /* LetsMeetTests.swift */; };
 		5037ACAE238D9C2D00067EFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5037ACAD238D9C2D00067EFA /* GoogleService-Info.plist */; };
 		5037ACB4238D9D8E00067EFA /* LetsMeetTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACB3238D9D8E00067EFA /* LetsMeetTabBar.swift */; };
-		5037ACBA238D9E3900067EFA /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACB9238D9E3900067EFA /* LoginVc.swift */; };
-		5037ACBC238D9E4500067EFA /* SignUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBB238D9E4500067EFA /* SignUpVc.swift */; };
-		5037ACBE238D9E5E00067EFA /* UserProfileVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBD238D9E5E00067EFA /* UserProfileVc.swift */; };
-		5037ACC0238D9E7700067EFA /* EditProfileVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBF238D9E7700067EFA /* EditProfileVc.swift */; };
+		5037ACBA238D9E3900067EFA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACB9238D9E3900067EFA /* LoginVC.swift */; };
+		5037ACBC238D9E4500067EFA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBB238D9E4500067EFA /* SignUpVC.swift */; };
+		5037ACBE238D9E5E00067EFA /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBD238D9E5E00067EFA /* UserProfileVC.swift */; };
+		5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACBF238D9E7700067EFA /* EditProfileVC.swift */; };
 		5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC1238D9F5D00067EFA /* CheckEmail&Pass.swift */; };
 		5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC3238D9FA700067EFA /* FirebaseAuthService.swift */; };
 		5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC5238D9FBF00067EFA /* FirebaseService.swift */; };
@@ -51,10 +51,10 @@
 		5037ACA4238D9A3F00067EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5037ACAD238D9C2D00067EFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5037ACB3238D9D8E00067EFA /* LetsMeetTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsMeetTabBar.swift; sourceTree = "<group>"; };
-		5037ACB9238D9E3900067EFA /* LoginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVc.swift; sourceTree = "<group>"; };
-		5037ACBB238D9E4500067EFA /* SignUpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVc.swift; sourceTree = "<group>"; };
-		5037ACBD238D9E5E00067EFA /* UserProfileVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVc.swift; sourceTree = "<group>"; };
-		5037ACBF238D9E7700067EFA /* EditProfileVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVc.swift; sourceTree = "<group>"; };
+		5037ACB9238D9E3900067EFA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5037ACBB238D9E4500067EFA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		5037ACBD238D9E5E00067EFA /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		5037ACBF238D9E7700067EFA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		5037ACC1238D9F5D00067EFA /* CheckEmail&Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckEmail&Pass.swift"; sourceTree = "<group>"; };
 		5037ACC3238D9FA700067EFA /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		5037ACC5238D9FBF00067EFA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		5037ACB5238D9DFF00067EFA /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5037ACB9238D9E3900067EFA /* LoginVc.swift */,
-				5037ACBB238D9E4500067EFA /* SignUpVc.swift */,
+				5037ACB9238D9E3900067EFA /* LoginVC.swift */,
+				5037ACBB238D9E4500067EFA /* SignUpVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -198,8 +198,8 @@
 		5037ACB7238D9E0E00067EFA /* User */ = {
 			isa = PBXGroup;
 			children = (
-				5037ACBD238D9E5E00067EFA /* UserProfileVc.swift */,
-				5037ACBF238D9E7700067EFA /* EditProfileVc.swift */,
+				5037ACBD238D9E5E00067EFA /* UserProfileVC.swift */,
+				5037ACBF238D9E7700067EFA /* EditProfileVC.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -392,15 +392,15 @@
 			files = (
 				5037ACC8238D9FCC00067EFA /* FirebaseStorage.swift in Sources */,
 				5037ACB4238D9D8E00067EFA /* LetsMeetTabBar.swift in Sources */,
-				5037ACBE238D9E5E00067EFA /* UserProfileVc.swift in Sources */,
+				5037ACBE238D9E5E00067EFA /* UserProfileVC.swift in Sources */,
 				5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */,
 				500E495C238DA40800D26BD2 /* AppUser.swift in Sources */,
 				5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */,
 				5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */,
-				5037ACC0238D9E7700067EFA /* EditProfileVc.swift in Sources */,
+				5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */,
 				5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */,
-				5037ACBA238D9E3900067EFA /* LoginVc.swift in Sources */,
-				5037ACBC238D9E4500067EFA /* SignUpVc.swift in Sources */,
+				5037ACBA238D9E3900067EFA /* LoginVC.swift in Sources */,
+				5037ACBC238D9E4500067EFA /* SignUpVC.swift in Sources */,
 				5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

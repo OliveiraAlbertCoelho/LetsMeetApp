@@ -12,7 +12,7 @@ class LetsMeetTabBar: UITabBarController {
     
    
     lazy var profileViewController: UINavigationController = {
-           let profileVC = UserProfileVc()
+           let profileVC = UserProfileVC()
            return UINavigationController(rootViewController: profileVC)
        }()
     override func viewDidLoad() {
