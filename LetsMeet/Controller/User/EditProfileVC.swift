@@ -99,8 +99,8 @@ class EditProfileVC: UIViewController {
                                 FirestoreService.manager.updateCurrentUser(userName: userInfo, photoURL: url) { [weak self] (newResult) in
                                     switch newResult {
                                     case .success():
-                                        self?.navigationController?.popViewController(animated: true)
-                                        
+//                                        self?.navigationController?.popViewController(animated: true)
+                                        print("save")
                                     case .failure(let error):
                                         print(error)
                                     }

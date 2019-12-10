@@ -11,8 +11,8 @@ import UIKit
 class LetsMeetTabBar: UITabBarController {
     
    
-    lazy var profileViewController: UINavigationController = {
-           let profileVC = UserProfileVC()
+    lazy var editprofileViewController: UINavigationController = {
+           let profileVC = EditProfileVC()
            return UINavigationController(rootViewController: profileVC)
        }()
     lazy var chatsViewController: UINavigationController = {
@@ -22,8 +22,8 @@ class LetsMeetTabBar: UITabBarController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        editprofileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
         chatsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "message"), tag: 1)
-        self.viewControllers = [profileViewController, chatsViewController]
+        self.viewControllers = [editprofileViewController, chatsViewController]
     }
 }
