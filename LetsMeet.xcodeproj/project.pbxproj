@@ -24,6 +24,7 @@
 		5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC3238D9FA700067EFA /* FirebaseAuthService.swift */; };
 		5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC5238D9FBF00067EFA /* FirebaseService.swift */; };
 		5037ACC8238D9FCC00067EFA /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC7238D9FCC00067EFA /* FirebaseStorage.swift */; };
+		504A528E239F435D0053661F /* ChatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A528D239F435D0053661F /* ChatsVC.swift */; };
 		5FB0B4E11E450E634D150DBA /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		5037ACC3238D9FA700067EFA /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		5037ACC5238D9FBF00067EFA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		5037ACC7238D9FCC00067EFA /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		504A528D239F435D0053661F /* ChatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVC.swift; sourceTree = "<group>"; };
 		5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3350948338A63698893511 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AFC3B1DAD3D640E78F7E49 /* Pods-LetsMeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		5037ACB6238D9E0600067EFA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				504A528D239F435D0053661F /* ChatsVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504A528E239F435D0053661F /* ChatsVC.swift in Sources */,
 				5037ACC8238D9FCC00067EFA /* FirebaseStorage.swift in Sources */,
 				5037ACB4238D9D8E00067EFA /* LetsMeetTabBar.swift in Sources */,
 				5037ACBE238D9E5E00067EFA /* UserProfileVC.swift in Sources */,

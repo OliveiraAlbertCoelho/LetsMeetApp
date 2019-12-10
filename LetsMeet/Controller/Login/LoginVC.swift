@@ -77,7 +77,6 @@ class LoginVC: UIViewController {
                 showAlert(title: "Error", message: "Please fill out all fields.")
                 return
             }
-            //MARK: TODO - remove whitespace (if any) from email/password
             guard email.isValidEmail else {
                 showAlert(title: "Error", message: "Please enter a valid email")
                 return
@@ -118,10 +117,8 @@ class LoginVC: UIViewController {
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                     let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
                     else {
-                        //MARK: TODO - handle could not swap root view controller
                         return
                 }
-                //MARK: TODO - refactor this logic into scene delegate
                 UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
                     window.rootViewController = LetsMeetTabBar()
                 }, completion: nil)
