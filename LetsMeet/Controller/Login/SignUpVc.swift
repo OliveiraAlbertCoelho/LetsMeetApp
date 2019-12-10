@@ -125,7 +125,7 @@ class SignUpVc: UIViewController {
                    }
                    //MARK: TODO - refactor this logic into scene delegate
                    UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
-                           window.rootViewController = PursuitGramTabBarVC()
+                           window.rootViewController = LetsMeetTabBar()
                    }, completion: nil)
                case .failure(let error):
                    self.showAlert(with: "Error creating user", and: "An error occured while creating new account \(error)")

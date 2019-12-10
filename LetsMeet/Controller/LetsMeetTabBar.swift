@@ -10,10 +10,14 @@ import UIKit
 
 class LetsMeetTabBar: UITabBarController {
     
-   let profile = UserProfileVc()
+   
+    lazy var profileViewController: UINavigationController = {
+           let profileVC = UserProfileVc()
+           return UINavigationController(rootViewController: profileVC)
+       }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        profile.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
-        self.viewControllers = [profile]
+        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        self.viewControllers = [profileViewController]
     }
 }

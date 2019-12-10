@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FFB1665268A602BBECAC907 /* Pods_LetsMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1038175980B18836487CE76D /* Pods_LetsMeetTests.framework */; };
+		500E495C238DA40800D26BD2 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E495B238DA40800D26BD2 /* AppUser.swift */; };
 		5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8B238D9A3D00067EFA /* AppDelegate.swift */; };
 		5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */; };
 		5037AC95238D9A3F00067EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5037AC94238D9A3F00067EFA /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1038175980B18836487CE76D /* Pods_LetsMeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		500E495B238DA40800D26BD2 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		5037AC88238D9A3D00067EFA /* LetsMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5037AC8B238D9A3D00067EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		5037ACAF238D9CFD00067EFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				500E495B238DA40800D26BD2 /* AppUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				5037ACB4238D9D8E00067EFA /* LetsMeetTabBar.swift in Sources */,
 				5037ACBE238D9E5E00067EFA /* UserProfileVc.swift in Sources */,
 				5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */,
+				500E495C238DA40800D26BD2 /* AppUser.swift in Sources */,
 				5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */,
 				5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */,
 				5037ACC0238D9E7700067EFA /* EditProfileVc.swift in Sources */,
