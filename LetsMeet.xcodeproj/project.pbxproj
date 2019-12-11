@@ -10,6 +10,7 @@
 		3FFB1665268A602BBECAC907 /* Pods_LetsMeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1038175980B18836487CE76D /* Pods_LetsMeetTests.framework */; };
 		500E495C238DA40800D26BD2 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E495B238DA40800D26BD2 /* AppUser.swift */; };
 		503223AC23A09D6A009A9BCA /* UsersMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503223AB23A09D6A009A9BCA /* UsersMessageCell.swift */; };
+		503223AE23A0AEE1009A9BCA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503223AD23A0AEE1009A9BCA /* ChatLogController.swift */; };
 		5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8B238D9A3D00067EFA /* AppDelegate.swift */; };
 		5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */; };
 		5037AC95238D9A3F00067EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5037AC94238D9A3F00067EFA /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		1038175980B18836487CE76D /* Pods_LetsMeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E495B238DA40800D26BD2 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		503223AB23A09D6A009A9BCA /* UsersMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMessageCell.swift; sourceTree = "<group>"; };
+		503223AD23A0AEE1009A9BCA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		5037AC88238D9A3D00067EFA /* LetsMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5037AC8B238D9A3D00067EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				504A528D239F435D0053661F /* ChatsVC.swift */,
 				504A528F239F48BF0053661F /* NewMessageVC.swift */,
+				503223AD23A0AEE1009A9BCA /* ChatLogController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */,
 				500E495C238DA40800D26BD2 /* AppUser.swift in Sources */,
 				5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */,
+				503223AE23A0AEE1009A9BCA /* ChatLogController.swift in Sources */,
 				5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */,
 				5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */,
 				5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */,
