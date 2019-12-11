@@ -13,6 +13,7 @@ class LetsMeetTabBar: UITabBarController {
    
     lazy var profileViewController: UINavigationController = {
            let profileVC = UserProfileVC()
+        profileVC.currentUser = AppUser(from: FirebaseAuthService.manager.currentUser!)
            return UINavigationController(rootViewController: profileVC)
        }()
     lazy var chatsViewController: UINavigationController = {

@@ -18,12 +18,12 @@ class EditProfileVC: UIViewController {
             addViews()
         }
         //MARK: Variables
-        var image: UIImage! {
+        var image: UIImage? {
             didSet {
                 self.profileImage.image = image
             }
         }
-        
+    var currentUser: AppUser!
         //MARK: UI Objects
         lazy var profileLabel: UILabel = {
             let label = UILabel()
@@ -86,7 +86,7 @@ class EditProfileVC: UIViewController {
             if userInfo.isEmpty{
                 showAlert(title: "", message: "Please type a username")
             }else {
-                guard let imageData = image.jpegData(compressionQuality: 1) else {
+                guard let imageData = image?.jpegData(compressionQuality: 1) else {
                     return
                 }
                 FirebaseStorage.profilemanager.storeImage(image: imageData, completion: { (result) in
@@ -99,7 +99,7 @@ class EditProfileVC: UIViewController {
                                 FirestoreService.manager.updateCurrentUser(userName: userInfo, photoURL: url) {  (newResult) in
                                     switch newResult {
                                     case .success():
-                                        print("save")
+                                        self.dismiss(animated: true, completion: nil)
                                     case .failure(let error):
                                         print(error)
                                     }

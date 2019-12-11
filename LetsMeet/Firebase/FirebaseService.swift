@@ -11,13 +11,12 @@ import FirebaseFirestore
 enum FireStoreCollections: String {
     case users
     case posts
-    case chats
 }
 
 class FirestoreService {
     static let manager = FirestoreService()
     private let db = Firestore.firestore()
-    //MARK: AppUsers
+    
     func SaveUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
@@ -29,17 +28,7 @@ class FirestoreService {
             completion(.success(()))
         }
     }
-    func SaveMessage(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
-          var fields = user.fieldsDict
-          fields["dateCreated"] = Date()
-        db.collection(FireStoreCollections.chats.rawValue).document(user.uid).collection("messages").document(user.uid).setData(fields) { (error) in
-              if let error = error {
-                  completion(.failure(error))
-                  print(error)
-              }
-              completion(.success(()))
-          }
-      }
+  
     
     func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
         guard let userId = FirebaseAuthService.manager.currentUser?.uid else {
@@ -65,6 +54,20 @@ class FirestoreService {
             
         }
     }
+    func getUserInfo(id: String,  completion: @escaping (Result<AppUser,Error>) -> ()) {
+                 db.collection(FireStoreCollections.users.rawValue).document(id).getDocument { (snapshot, error)  in
+                     if let error = error {
+                         completion(.failure(error))
+                     } else if let snapshot = snapshot,
+                         let data = snapshot.data() {
+                         let userID = snapshot.documentID
+                         let user = AppUser(from: data, id: userID)
+                         if let appUser = user {
+                             completion(.success(appUser))
+                         }
+                     }
+                 }
+             }
     func getUserFromPost(creatorID: String, completion: @escaping (Result<AppUser,Error>) -> ()) {
            db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error)  in
                if let error = error {
