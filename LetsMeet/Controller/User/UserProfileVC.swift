@@ -14,8 +14,10 @@ class UserProfileVC: UIViewController {
         super.viewDidLoad()
         setUpView()
         setUpContraints()
-        setUpProfile()
-      
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+         setUpProfile()
     }
     //MARK: - Controller variables
     var currentUser: AppUser!
@@ -31,6 +33,7 @@ class UserProfileVC: UIViewController {
         setUpUserNameStack()
     }
     private func setUpProfile(){
+        currentUser = AppUser(from:FirebaseAuthService.manager.currentUser!)
         currentUsernameLabel.text = currentUser.userName
         currentEmailLabel.text = currentUser.email
         if let imageUrl = currentUser.photoURL {
@@ -144,7 +147,7 @@ class UserProfileVC: UIViewController {
         let editVc = EditProfileVC()
         editVc.currentUser = currentUser
         editVc.profileImage.image = profileImage.image
-        present(editVc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(editVc, animated: true)
     }
     @objc private func logOut (){
         DispatchQueue.main.async {
@@ -161,3 +164,4 @@ class UserProfileVC: UIViewController {
         }
     }
 }
+

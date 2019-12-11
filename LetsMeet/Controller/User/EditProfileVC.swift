@@ -92,14 +92,13 @@ class EditProfileVC: UIViewController {
                 FirebaseStorage.profilemanager.storeImage(image: imageData, completion: { (result) in
                     switch result{
                     case .success(let url):
-                        
                         FirebaseAuthService.manager.updateUserFields(userName: userInfo, photoURL: url) { (result) in
                             switch result{
                             case .success():
                                 FirestoreService.manager.updateCurrentUser(userName: userInfo, photoURL: url) {  (newResult) in
                                     switch newResult {
                                     case .success():
-                                        self.dismiss(animated: true, completion: nil)
+                                        self.navigationController?.popViewController(animated: true)
                                     case .failure(let error):
                                         print(error)
                                     }
