@@ -85,4 +85,8 @@ extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatLogVC = ChatLogController()
+        present(chatLogVC, animated: true, completion: nil)
+    }
     }
