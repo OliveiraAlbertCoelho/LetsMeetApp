@@ -39,7 +39,7 @@ class UsersMessageCell: UITableViewCell {
       //MARK: - Regular Functions
         private func setUpContentView(){
             constrainImage()
-            constrainFavButton()
+            constrainUserName()
            
         }
          //MARK: - objc Functions
@@ -57,7 +57,7 @@ class UsersMessageCell: UITableViewCell {
                  userProfileImage.heightAnchor.constraint(equalToConstant: 40)
              ])
          }
-            private func constrainFavButton(){
+            private func constrainUserName(){
                 contentView.addSubview(userNameLabel)
                 userNameLabel.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
