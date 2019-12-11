@@ -11,6 +11,7 @@ import FirebaseFirestore
 enum FireStoreCollections: String {
     case users
     case posts
+    case chats
 }
 
 class FirestoreService {
@@ -28,6 +29,18 @@ class FirestoreService {
             completion(.success(()))
         }
     }
+    func SaveMessage(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
+          var fields = user.fieldsDict
+          fields["dateCreated"] = Date()
+        db.collection(FireStoreCollections.chats.rawValue).document(user.uid).collection("messages").document(user.uid).setData(fields) { (error) in
+              if let error = error {
+                  completion(.failure(error))
+                  print(error)
+              }
+              completion(.success(()))
+          }
+      }
+    
     func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
         guard let userId = FirebaseAuthService.manager.currentUser?.uid else {
             //MARK: TODO - handle can't get current user

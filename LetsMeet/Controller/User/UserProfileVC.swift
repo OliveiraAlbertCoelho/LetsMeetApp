@@ -20,6 +20,26 @@ class UserProfileVC: UIViewController {
         navigationItem.leftBarButtonItem = logOutButton
     }
     //MARK: - UI Objects
+    lazy var profileImage: UIImageView = {
+       let image = UIImageView()
+        return image
+    }()
+    lazy var userNameLabel: UILabel = {
+       let label = UILabel()
+        return label
+    }()
+    lazy var currentUsernameLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    lazy var emailLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    lazy var currentEmailLabel: UILabel = {
+       let label = UILabel()
+        return label
+    }()
     lazy var logOutButton: UIBarButtonItem = {
         let button = UIBarButtonItem(title: "Log Out", style: UIBarButtonItem.Style.plain, target: self, action: #selector(logOut))
         return button
@@ -37,4 +57,5 @@ class UserProfileVC: UIViewController {
                   window.rootViewController = LoginVC()
               }, completion: nil)
           }
-    }}
+    }
+}

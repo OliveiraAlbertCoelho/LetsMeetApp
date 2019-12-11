@@ -15,6 +15,7 @@ class ChatLogController: UIViewController {
         setUpView()
         view.backgroundColor = .white
     }
+    var user = AppUser(from: FirebaseAuthService.manager.currentUser!)
     //MARK: - Variables
       //MARK: - UI Objects
     lazy var containerView: UIView = {
@@ -34,6 +35,7 @@ class ChatLogController: UIViewController {
     lazy var sendButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.setTitle("Send", for: .normal)
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
     lazy var separatorLineView: UIView = {
@@ -42,6 +44,16 @@ class ChatLogController: UIViewController {
         return view
     }()
     //MARK: - Objc Functions
+    @objc private func sendMessage(){
+        FirestoreService.manager.SaveMessage(user: user) { (result) in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(()):
+                print("sent")
+            }
+        }
+    }
       //MARK: - Regular Functions
     private func setUpView(){
         constrainContainerView()
