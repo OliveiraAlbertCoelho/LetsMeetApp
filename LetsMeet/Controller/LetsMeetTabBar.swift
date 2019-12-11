@@ -11,19 +11,18 @@ import UIKit
 class LetsMeetTabBar: UITabBarController {
     
    
-    lazy var editprofileViewController: UINavigationController = {
-           let profileVC = EditProfileVC()
+    lazy var profileViewController: UINavigationController = {
+           let profileVC = UserProfileVC()
            return UINavigationController(rootViewController: profileVC)
        }()
     lazy var chatsViewController: UINavigationController = {
         let chatVC = ChatsVC()
-//        chatVC.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
         return UINavigationController(rootViewController: chatVC)
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        editprofileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
         chatsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "message"), tag: 1)
-        self.viewControllers = [editprofileViewController, chatsViewController]
+        self.viewControllers = [profileViewController, chatsViewController]
     }
 }
