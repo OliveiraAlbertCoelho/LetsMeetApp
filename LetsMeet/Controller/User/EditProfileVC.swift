@@ -89,17 +89,16 @@ class EditProfileVC: UIViewController {
                 guard let imageData = image.jpegData(compressionQuality: 1) else {
                     return
                 }
-                FirebaseStorage.profilemanager.storeImage(image: imageData, completion: { [weak self] (result) in
+                FirebaseStorage.profilemanager.storeImage(image: imageData, completion: { (result) in
                     switch result{
                     case .success(let url):
                         
                         FirebaseAuthService.manager.updateUserFields(userName: userInfo, photoURL: url) { (result) in
                             switch result{
                             case .success():
-                                FirestoreService.manager.updateCurrentUser(userName: userInfo, photoURL: url) { [weak self] (newResult) in
+                                FirestoreService.manager.updateCurrentUser(userName: userInfo, photoURL: url) {  (newResult) in
                                     switch newResult {
                                     case .success():
-//                                        self?.navigationController?.popViewController(animated: true)
                                         print("save")
                                     case .failure(let error):
                                         print(error)

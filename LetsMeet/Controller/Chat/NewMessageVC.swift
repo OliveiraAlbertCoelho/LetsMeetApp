@@ -39,7 +39,6 @@ class NewMessageVC: UITableViewController {
         }
     }
     //MARK: - Constraints
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
