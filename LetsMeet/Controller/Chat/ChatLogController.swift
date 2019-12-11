@@ -19,32 +19,37 @@ class ChatLogController: UIViewController {
       //MARK: - UI Objects
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
         return view
     }()
     lazy var chatTableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = .blue
         return table
     }()
-    lazy var userInput: UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .gray
+    lazy var userInput: UITextField = {
+        let textView = UITextField()
+        textView.placeholder = "Enter message..."
+
         return textView
     }()
     lazy var sendButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton(type: UIButton.ButtonType.system)
         button.setTitle("Send", for: .normal)
-        button.tintColor = .red
         return button
+    }()
+    lazy var separatorLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.8626694083, green: 0.8627938032, blue: 0.8626419902, alpha: 1)
+        return view
     }()
     //MARK: - Objc Functions
       //MARK: - Regular Functions
     private func setUpView(){
         constrainContainerView()
+        constrainSeparatorLine()
         constrainSendButton()
         constrainUserInput()
         constrainTableView()
+        
     }
       //MARK: - Constraints
     private func constrainContainerView(){
@@ -74,10 +79,19 @@ class ChatLogController: UIViewController {
                 userInput.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
                 userInput.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0),
                 userInput.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: 0),
-                userInput.heightAnchor.constraint(equalTo:  containerView.heightAnchor, multiplier: 0)
+                userInput.topAnchor.constraint(equalTo: separatorLineView.bottomAnchor)
             ])
         }
-    
+    private func constrainSeparatorLine(){
+        containerView.addSubview(separatorLineView)
+                  separatorLineView.translatesAutoresizingMaskIntoConstraints = false
+                  NSLayoutConstraint.activate([
+                      separatorLineView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0),
+                      separatorLineView.widthAnchor.constraint(equalTo: containerView.widthAnchor, constant: 0),
+                      separatorLineView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
+                      separatorLineView.heightAnchor.constraint(equalToConstant: 1)
+                  ])
+              }
   private func constrainTableView(){
         view.addSubview(chatTableView)
               chatTableView.translatesAutoresizingMaskIntoConstraints = false
