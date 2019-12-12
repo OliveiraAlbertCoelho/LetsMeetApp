@@ -86,7 +86,7 @@ class EditProfileVC: UIViewController {
             if userInfo.isEmpty{
                 showAlert(title: "", message: "Please type a username")
             }else {
-                guard let imageData = image?.jpegData(compressionQuality: 1) else {
+                guard let imageData = image?.jpegData(compressionQuality: 0.2) else {
                     return
                 }
                 FirebaseStorage.profilemanager.storeImage(image: imageData, completion: { (result) in

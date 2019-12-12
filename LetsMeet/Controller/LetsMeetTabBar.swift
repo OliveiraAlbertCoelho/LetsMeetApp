@@ -29,7 +29,6 @@ class LetsMeetTabBar: UITabBarController {
         feedViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
         chatsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "message"), tag: 1)
         profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 2)
-       
         self.viewControllers = [feedViewController, chatsViewController,profileViewController]
     }
 }

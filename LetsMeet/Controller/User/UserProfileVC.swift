@@ -146,7 +146,7 @@ class UserProfileVC: UIViewController {
     @objc private func editAction(){
         let editVc = EditProfileVC()
         editVc.currentUser = currentUser
-        editVc.profileImage.image = profileImage.image
+        editVc.image = profileImage.image
         self.navigationController?.pushViewController(editVc, animated: true)
     }
     @objc private func logOut (){
