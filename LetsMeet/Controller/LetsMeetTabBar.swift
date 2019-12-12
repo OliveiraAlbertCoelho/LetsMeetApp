@@ -20,10 +20,16 @@ class LetsMeetTabBar: UITabBarController {
         let chatVC = ChatsVC()
         return UINavigationController(rootViewController: chatVC)
     }()
+    lazy var feedViewController: UINavigationController = {
+        let feed = FeedVC()
+        return UINavigationController(rootViewController: feed)
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
+        feedViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "house"), tag: 0)
         chatsViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "message"), tag: 1)
-        self.viewControllers = [profileViewController, chatsViewController]
+        profileViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person"), tag: 2)
+       
+        self.viewControllers = [feedViewController, chatsViewController,profileViewController]
     }
 }
