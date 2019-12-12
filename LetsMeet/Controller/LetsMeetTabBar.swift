@@ -22,6 +22,7 @@ class LetsMeetTabBar: UITabBarController {
     }()
     lazy var feedViewController: UINavigationController = {
         let feed = FeedVC()
+        feed.currentUser = AppUser(from: FirebaseAuthService.manager.currentUser!)
         return UINavigationController(rootViewController: feed)
     }()
     override func viewDidLoad() {

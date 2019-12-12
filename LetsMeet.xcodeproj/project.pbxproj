@@ -30,6 +30,7 @@
 		504A5290239F48BF0053661F /* NewMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A528F239F48BF0053661F /* NewMessageVC.swift */; };
 		5087D9C123A1CFCA000B2F69 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C023A1CFCA000B2F69 /* FeedVC.swift */; };
 		5087D9C323A1D0FF000B2F69 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */; };
+		5087D9C523A1D462000B2F69 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C423A1D462000B2F69 /* PostModel.swift */; };
 		5FB0B4E11E450E634D150DBA /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		504A528F239F48BF0053661F /* NewMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageVC.swift; sourceTree = "<group>"; };
 		5087D9C023A1CFCA000B2F69 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
+		5087D9C423A1D462000B2F69 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3350948338A63698893511 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AFC3B1DAD3D640E78F7E49 /* Pods-LetsMeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				500E495B238DA40800D26BD2 /* AppUser.swift */,
+				5087D9C423A1D462000B2F69 /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */,
 				5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */,
 				5037ACBA238D9E3900067EFA /* LoginVC.swift in Sources */,
+				5087D9C523A1D462000B2F69 /* PostModel.swift in Sources */,
 				5087D9C323A1D0FF000B2F69 /* CreatePostVC.swift in Sources */,
 				5037ACBC238D9E4500067EFA /* SignUpVC.swift in Sources */,
 				5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */,
