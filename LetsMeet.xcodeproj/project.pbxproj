@@ -11,6 +11,9 @@
 		500E495C238DA40800D26BD2 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E495B238DA40800D26BD2 /* AppUser.swift */; };
 		503223AC23A09D6A009A9BCA /* UsersMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503223AB23A09D6A009A9BCA /* UsersMessageCell.swift */; };
 		503223AE23A0AEE1009A9BCA /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503223AD23A0AEE1009A9BCA /* ChatLogController.swift */; };
+		5035381E23A2F0B700694909 /* new.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035381D23A2F0B700694909 /* new.swift */; };
+		5035382023A3E9DD00694909 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035381F23A3E9DD00694909 /* ChannelModel.swift */; };
+		5035382323A3ED0B00694909 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035382223A3ED0B00694909 /* MessageModel.swift */; };
 		5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8B238D9A3D00067EFA /* AppDelegate.swift */; };
 		5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */; };
 		5037AC95238D9A3F00067EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5037AC94238D9A3F00067EFA /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		500E495B238DA40800D26BD2 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		503223AB23A09D6A009A9BCA /* UsersMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMessageCell.swift; sourceTree = "<group>"; };
 		503223AD23A0AEE1009A9BCA /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		5035381D23A2F0B700694909 /* new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new.swift; sourceTree = "<group>"; };
+		5035381F23A3E9DD00694909 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		5035382223A3ED0B00694909 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		5037AC88238D9A3D00067EFA /* LetsMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5037AC8B238D9A3D00067EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5037AC8D238D9A3D00067EFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 			children = (
 				500E495B238DA40800D26BD2 /* AppUser.swift */,
 				5087D9C423A1D462000B2F69 /* PostModel.swift */,
+				5035381F23A3E9DD00694909 /* ChannelModel.swift */,
+				5035382223A3ED0B00694909 /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				5037ACB6238D9E0600067EFA /* Chat */,
 				5037ACB5238D9DFF00067EFA /* Login */,
 				5037ACB3238D9D8E00067EFA /* LetsMeetTabBar.swift */,
+				5035381D23A2F0B700694909 /* new.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -432,10 +441,13 @@
 				5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */,
 				5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */,
 				5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */,
+				5035382023A3E9DD00694909 /* ChannelModel.swift in Sources */,
 				5037ACBA238D9E3900067EFA /* LoginVC.swift in Sources */,
+				5035381E23A2F0B700694909 /* new.swift in Sources */,
 				5087D9C523A1D462000B2F69 /* PostModel.swift in Sources */,
 				5087D9C323A1D0FF000B2F69 /* CreatePostVC.swift in Sources */,
 				5037ACBC238D9E4500067EFA /* SignUpVC.swift in Sources */,
+				5035382323A3ED0B00694909 /* MessageModel.swift in Sources */,
 				5037AC8E238D9A3D00067EFA /* SceneDelegate.swift in Sources */,
 				503223AC23A09D6A009A9BCA /* UsersMessageCell.swift in Sources */,
 			);

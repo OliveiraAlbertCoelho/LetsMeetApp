@@ -17,7 +17,7 @@ class NewMessageVC: UIViewController {
         getUsers()
     }
 
-
+    var currentUser = FirebaseAuthService.manager.currentUser!
     //MARK: - Variables
     var users = [AppUser](){
         didSet{
@@ -87,6 +87,16 @@ extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chatLogVC = ChatLogController()
+        let selectedUser = users[indexPath.row]
+        let channel = ChannelModel(contact1: currentUser.uid , contact2: selectedUser.uid)
+        FirestoreService.manager.startChannel(channel: channel) { (result) in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(()):
+                print("saved")
+            }
+        }
         present(chatLogVC, animated: true, completion: nil)
     }
     }

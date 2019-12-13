@@ -11,6 +11,7 @@ import FirebaseFirestore
 enum FireStoreCollections: String {
     case users
     case posts
+    case channel
 }
 
 class FirestoreService {
@@ -94,7 +95,20 @@ class FirestoreService {
                   })
                   completion(.success(posts ?? []))
                   }
-      }
-      }
-         private init () {}
+        }
+    }
+    func startChannel(channel: ChannelModel, completion: @escaping (Result<(), Error>) -> ()) {
+            let fields = channel.fieldsDict
+        db.collection(FireStoreCollections.channel.rawValue).addDocument(data: fields){ (error) in
+                      if let error = error {
+                          completion(.failure(error))
+                          print(error)
+                      }
+                      completion(.success(()))
+                  }
+            }
+//    func startMessage(channelId: String, message: MessageModel,  completion: @escaping (Result<(), Error>) -> ()){
+//        db.collection(FireStoreCollections.channel.rawValue).addDocument(data: <#T##[String : Any]#>)
+//    }
+    private init () {}
 }
