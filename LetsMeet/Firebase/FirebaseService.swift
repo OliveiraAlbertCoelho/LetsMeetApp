@@ -29,11 +29,10 @@ class FirestoreService {
             completion(.success(()))
         }
     }
-  
+    
     
     func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
         guard let userId = FirebaseAuthService.manager.currentUser?.uid else {
-            //MARK: TODO - handle can't get current user
             return
         }
         var updateFields = [String:Any]()
@@ -56,59 +55,74 @@ class FirestoreService {
         }
     }
     func getUserInfo(id: String,  completion: @escaping (Result<AppUser,Error>) -> ()) {
-                 db.collection(FireStoreCollections.users.rawValue).document(id).getDocument { (snapshot, error)  in
-                     if let error = error {
-                         completion(.failure(error))
-                     } else if let snapshot = snapshot,
-                         let data = snapshot.data() {
-                         let userID = snapshot.documentID
-                         let user = AppUser(from: data, id: userID)
-                         if let appUser = user {
-                             completion(.success(appUser))
-                         }
-                     }
-                 }
-             }
-    func getUserFromPost(creatorID: String, completion: @escaping (Result<AppUser,Error>) -> ()) {
-           db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error)  in
-               if let error = error {
-                   completion(.failure(error))
-               } else if let snapshot = snapshot,
-                   let data = snapshot.data() {
-                   let userID = snapshot.documentID
-                   let user = AppUser(from: data, id: userID)
-                   if let appUser = user {
-                       completion(.success(appUser))
-                   }
-               }
-           }
-       }
-     func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()){
-          db.collection(FireStoreCollections.users.rawValue).getDocuments {(snapshot, error) in
-              if let error = error{
-                  completion(.failure(error))
-              }else {
-                  let posts = snapshot?.documents.compactMap({ (snapshot) -> AppUser? in
-                      let postID = snapshot.documentID
-                      let post = AppUser(from: snapshot.data(), id: postID)
-                      return post
-                  })
-                  completion(.success(posts ?? []))
-                  }
+        db.collection(FireStoreCollections.users.rawValue).document(id).getDocument { (snapshot, error)  in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot,
+                let data = snapshot.data() {
+                let userID = snapshot.documentID
+                let user = AppUser(from: data, id: userID)
+                if let appUser = user {
+                    completion(.success(appUser))
+                }
+            }
         }
     }
-    func startChannel(channel: ChannelModel, completion: @escaping (Result<(), Error>) -> ()) {
-            let fields = channel.fieldsDict
-        db.collection(FireStoreCollections.channel.rawValue).addDocument(data: fields){ (error) in
-                      if let error = error {
-                          completion(.failure(error))
-                          print(error)
-                      }
-                      completion(.success(()))
-                  }
+    func getUserFromPost(creatorID: String, completion: @escaping (Result<AppUser,Error>) -> ()) {
+        db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error)  in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot,
+                let data = snapshot.data() {
+                let userID = snapshot.documentID
+                let user = AppUser(from: data, id: userID)
+                if let appUser = user {
+                    completion(.success(appUser))
+                }
             }
-//    func startMessage(channelId: String, message: MessageModel,  completion: @escaping (Result<(), Error>) -> ()){
-//        db.collection(FireStoreCollections.channel.rawValue).addDocument(data: <#T##[String : Any]#>)
-//    }
-    private init () {}
+        }
+    }
+    func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()){
+        db.collection(FireStoreCollections.users.rawValue).getDocuments {(snapshot, error) in
+            if let error = error{
+                completion(.failure(error))
+            }else {
+                let users = snapshot?.documents.compactMap({ (snapshot) -> AppUser? in
+                    let userID = snapshot.documentID
+                    let user = AppUser(from: snapshot.data(), id: userID)
+                    return user
+                })
+                completion(.success(users ?? []))
+            }
+        }
+    }
+
+     func startChannel(Channel: ChannelModel,users: [String], completion: @escaping (Result<(), Error>) -> ()){
+        db.collection(FireStoreCollections.channel.rawValue).whereField("participants", arrayContains: users).getDocuments { (snapshot, error) in
+            if let error = error{
+                completion(.failure(error))
+            }else {
+                let channels = snapshot?.documents.compactMap({ (snapshot) -> ChannelModel? in
+                    let channelID = snapshot.documentID
+                    let newChannel = ChannelModel(from: snapshot.data(), id: channelID)
+                    return newChannel
+                })
+                guard let checkChannels = channels else{
+                    return
+                }
+                if checkChannels.isEmpty{
+                    self.db.collection(FireStoreCollections.channel.rawValue).addDocument(data: Channel.fieldsDict)
+                }
+                completion(.success(()))
+            }
+        }
+    }
+        private init () {}
 }
+
+    
+    //    }
+    //    func startMessage(users:[String], message: MessageModel,  completion: @escaping (Result<(), Error>) -> ()){
+    //        startChannel(users: users)
+    //        let field = message.fieldsDict
+    //}

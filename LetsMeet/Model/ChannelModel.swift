@@ -15,7 +15,6 @@ struct ChannelModel{
     init( contacts: [String]){
         self.contacts = contacts
         self.id = UUID().description
-            
         }
         init? (from dict: [String: Any], id: String){
             guard let contacts = dict["contacts"] as? [String] else { return nil }

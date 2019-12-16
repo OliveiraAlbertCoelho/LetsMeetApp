@@ -35,6 +35,7 @@ class ChatLogController: UIViewController {
     lazy var sendButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.setTitle("Send", for: .normal)
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
     lazy var separatorLineView: UIView = {
@@ -43,7 +44,17 @@ class ChatLogController: UIViewController {
         return view
     }()
     //MARK: - Objc Functions
- 
+   @objc private func sendMessage(){
+//    var message = MessageModel(profilePhoto: "", sender_id: "albert", sender_name: "me", message: "yo")
+//    FirestoreService.manager.startMessage(users: ["yo,Me"], message: message) { (result) in
+//        switch result{
+//        case .failure(let error):
+//            print(error)
+//        case .success(()):
+//            print("a")
+//        }
+//    }
+    }
       //MARK: - Regular Functions
     private func setUpView(){
         constrainContainerView()

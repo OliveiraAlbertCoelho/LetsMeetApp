@@ -40,8 +40,8 @@ class NewMessageVC: UIViewController {
             case .failure(let error):
                 print(error)
             case .success(let user):
-                print("ha")
                 self.users = user
+                print(user.count)
             }
         }
     }
@@ -88,15 +88,16 @@ extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chatLogVC = ChatLogController()
         let selectedUser = users[indexPath.row]
-        let channel = ChannelModel(contact1: currentUser.uid , contact2: selectedUser.uid)
-        FirestoreService.manager.startChannel(channel: channel) { (result) in
+        let channel = ChannelModel(contacts: [selectedUser.uid, currentUser.uid])
+        
+        FirestoreService.manager.startChannel(Channel: channel, users: [currentUser.uid, selectedUser.uid]){ (result) in
             switch result{
             case .failure(let error):
                 print(error)
             case .success(()):
-                print("saved")
+                print("e")
             }
         }
-        present(chatLogVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(chatLogVC, animated: true)
     }
-    }
+}
