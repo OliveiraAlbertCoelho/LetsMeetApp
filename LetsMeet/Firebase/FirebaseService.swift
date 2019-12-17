@@ -98,7 +98,8 @@ class FirestoreService {
     }
 
      func startChannel(Channel: ChannelModel,users: [String], completion: @escaping (Result<(), Error>) -> ()){
-        db.collection(FireStoreCollections.channel.rawValue).whereField("participants", arrayContains: users).getDocuments { (snapshot, error) in
+        var saveChannels: [ChannelModel]?
+        db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContains: users.description).getDocuments { (snapshot, error) in
             if let error = error{
                 completion(.failure(error))
             }else {
@@ -107,16 +108,21 @@ class FirestoreService {
                     let newChannel = ChannelModel(from: snapshot.data(), id: channelID)
                     return newChannel
                 })
-                guard let checkChannels = channels else{
+                saveChannels = channels
+            }
+            
+                guard let checkChannels = saveChannels else{
                     return
                 }
+                print(checkChannels.isEmpty)
+                print(checkChannels.count)
                 if checkChannels.isEmpty{
+                    print(checkChannels)
                     self.db.collection(FireStoreCollections.channel.rawValue).addDocument(data: Channel.fieldsDict)
                 }
                 completion(.success(()))
             }
         }
-    }
         private init () {}
 }
 

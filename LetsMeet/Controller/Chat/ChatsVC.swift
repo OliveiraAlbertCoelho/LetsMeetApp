@@ -30,7 +30,7 @@ class ChatsVC: UITableViewController {
     //MARK: - Objc Functions
     @objc private func segueToMessageVC(){
     let newMessageVC = NewMessageVC()
-    present(newMessageVC, animated: true, completion: nil )
+        navigationController?.pushViewController(newMessageVC, animated: true)
     }
     //MARK: - Regular Functions
     private func setUpView(){
