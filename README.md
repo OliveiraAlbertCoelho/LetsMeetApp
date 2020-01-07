@@ -3,7 +3,7 @@ The user logs in the app, makes his account with his information such as birthda
 
 
 
-Future Features
+Future Features:
 Users will be able to search for other users with similar interests
 Users can message other users
 Users can see if other users are nearby
