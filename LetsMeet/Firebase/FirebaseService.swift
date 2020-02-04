@@ -106,10 +106,22 @@ class FirestoreService {
                 completion(.failure(error))
                 }}
         }}
+    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
+        var fields = post.fieldsDict
+        fields["dateCreated"] = Date()
+        db.collection(FireStoreCollections.posts.rawValue).addDocument(data: fields) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
         private init () {}
-}
 
-    
+
+
+}
     //    }
     //    func startMessage(users:[String], message: MessageModel,  completion: @escaping (Result<(), Error>) -> ()){
     //        startChannel(users: users)

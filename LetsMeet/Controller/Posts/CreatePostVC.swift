@@ -29,23 +29,38 @@ class CreatePostVC: UIViewController {
         text.font = .systemFont(ofSize: 20)
         return text
     }()
-    lazy var postButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Post", style: UIBarButtonItem.Style.plain, target: self, action: #selector(postAction))
+   
+    lazy var postButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Post", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        button.addTarget(self, action: #selector(postAction), for: .touchUpInside)
         return button
     }()
     
+    
     //MARK: - Objc Functions
     @objc private func postAction(){
+        var post = Post(creatorID: currentUser!.uid, imageUrl: nil, postContent: userPostInput.text)
+        FirestoreService.manager.createPost(post: post) { (result) in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(()):
+                print("hell yeah")
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     //MARK: - Regular Functions
     private func setUpView(){
-        navigationItem.rightBarButtonItem = postButton
         view.backgroundColor = .white
     }
     
     private func setUpConstraints(){
         constrainPostLabel()
         constrainUserInput()
+        constrainPostButton()
     }
     //MARK: - Constraints
     private func constrainPostLabel(){
@@ -68,5 +83,14 @@ class CreatePostVC: UIViewController {
             userPostInput.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
+    private func constrainPostButton(){
+        view.addSubview(postButton)
+        postButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            postButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            postButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            postButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            postButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
 }
