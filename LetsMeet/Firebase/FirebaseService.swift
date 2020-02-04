@@ -97,15 +97,15 @@ class FirestoreService {
         }
     }
 
-     func checkChannel(users: [String], completion: @escaping (Result<(), Error>) -> ()){
-        db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContainsAny: users).getDocuments { (snapshot, error) in
-            if let snap = snapshot{
-                completion(.success(()))
-            }else {
-               if let error = error{
-                completion(.failure(error))
-                }}
-        }}
+//     func checkChannel(users: [String], completion: @escaping (Result<(), Error>) -> ()){
+//        db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContains: users).getDocuments { (snapshot, error) in
+//            if let snap = snapshot{
+//                completion(.success(()))
+//            }else {
+//               if let error = error{
+//                completion(.failure(error))
+//                }}
+//        }}
     func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = post.fieldsDict
         fields["dateCreated"] = Date()
@@ -117,6 +117,7 @@ class FirestoreService {
             }
         }
     }
+    
         private init () {}
 
 

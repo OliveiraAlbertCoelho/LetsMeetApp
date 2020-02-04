@@ -33,6 +33,7 @@
 		5087D9C123A1CFCA000B2F69 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C023A1CFCA000B2F69 /* FeedVC.swift */; };
 		5087D9C323A1D0FF000B2F69 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */; };
 		5087D9C523A1D462000B2F69 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C423A1D462000B2F69 /* PostModel.swift */; };
+		508BC8A323E9EE5400A93734 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508BC8A223E9EE5400A93734 /* PostTableViewCell.swift */; };
 		5FB0B4E11E450E634D150DBA /* Pods_LetsMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		5087D9C023A1CFCA000B2F69 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		5087D9C423A1D462000B2F69 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		508BC8A223E9EE5400A93734 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5C870B1B791030630E4A4846 /* Pods_LetsMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3350948338A63698893511 /* Pods-LetsMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeet.debug.xcconfig"; path = "Target Support Files/Pods-LetsMeet/Pods-LetsMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AFC3B1DAD3D640E78F7E49 /* Pods-LetsMeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsMeetTests.release.xcconfig"; path = "Target Support Files/Pods-LetsMeetTests/Pods-LetsMeetTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,12 +115,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		503223AA23A09D49009A9BCA /* VIews */ = {
+		503223AA23A09D49009A9BCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				503223AB23A09D6A009A9BCA /* UsersMessageCell.swift */,
+				508BC8A223E9EE5400A93734 /* PostTableViewCell.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5037AC7F238D9A3D00067EFA = {
@@ -144,7 +147,7 @@
 		5037AC8A238D9A3D00067EFA /* LetsMeet */ = {
 			isa = PBXGroup;
 			children = (
-				503223AA23A09D49009A9BCA /* VIews */,
+				503223AA23A09D49009A9BCA /* Views */,
 				5037ACB2238D9D1200067EFA /* Firebase */,
 				5037ACB1238D9D0900067EFA /* Supporting */,
 				5037ACB0238D9D0300067EFA /* Controller */,
@@ -436,6 +439,7 @@
 				5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */,
 				503223AE23A0AEE1009A9BCA /* ChatLogController.swift in Sources */,
 				5037ACC4238D9FA700067EFA /* FirebaseAuthService.swift in Sources */,
+				508BC8A323E9EE5400A93734 /* PostTableViewCell.swift in Sources */,
 				5037ACC0238D9E7700067EFA /* EditProfileVC.swift in Sources */,
 				5037ACC6238D9FBF00067EFA /* FirebaseService.swift in Sources */,
 				5035382023A3E9DD00694909 /* ChannelModel.swift in Sources */,

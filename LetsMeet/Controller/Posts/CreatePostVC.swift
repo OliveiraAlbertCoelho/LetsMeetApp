@@ -41,7 +41,7 @@ class CreatePostVC: UIViewController {
     
     //MARK: - Objc Functions
     @objc private func postAction(){
-        var post = Post(creatorID: currentUser!.uid, imageUrl: nil, postContent: userPostInput.text)
+        let post = Post(creatorID: currentUser!.uid, imageUrl: nil, postContent: userPostInput.text)
         FirestoreService.manager.createPost(post: post) { (result) in
             switch result{
             case .failure(let error):
