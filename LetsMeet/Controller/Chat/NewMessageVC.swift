@@ -16,7 +16,7 @@ class NewMessageVC: UIViewController {
         setUpTableViewConstraints()
         getUsers()
     }
-
+    
     var currentUser = FirebaseAuthService.manager.currentUser!
     //MARK: - Variables
     var users = [AppUser](){
@@ -45,43 +45,43 @@ class NewMessageVC: UIViewController {
             }
         }
     }
-
+    
     //MARK: - Constraints
-private func setUpTableViewConstraints(){
-    view.addSubview(usersTable)
-    usersTable.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        usersTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        usersTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        usersTable.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
-        usersTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-    ])
-}
+    private func setUpTableViewConstraints(){
+        view.addSubview(usersTable)
+        usersTable.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            usersTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            usersTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            usersTable.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
+            usersTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
 extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
+        
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         guard let cell = usersTable.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UsersMessageCell else {return UITableViewCell()}
-               let data = users[indexPath.row]
-               cell.userNameLabel.text = data.email
-               if let userImage = data.photoURL{
-               FirebaseStorage.profilemanager.getImages(profileUrl: userImage) { (result) in
-                        switch result{
-                        case .failure(let error):
-                            print(error)
-                        case .success(let image):
-                            cell.userProfileImage.image = UIImage(data: image)
-                        }
-                    }
-               }else{
-                    cell.userProfileImage.image = UIImage(named: "noImage")
-               }
-               return cell
-           }
+        guard let cell = usersTable.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UsersMessageCell else {return UITableViewCell()}
+        let data = users[indexPath.row]
+        cell.userNameLabel.text = data.email
+        if let userImage = data.photoURL{
+            FirebaseStorage.profilemanager.getImages(profileUrl: userImage) { (result) in
+                switch result{
+                case .failure(let error):
+                    print(error)
+                case .success(let image):
+                    cell.userProfileImage.image = UIImage(data: image)
+                }
+            }
+        }else{
+            cell.userProfileImage.image = UIImage(named: "noImage")
+        }
+        return cell
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -89,13 +89,12 @@ extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
         let chatLogVC = ChatLogController()
         let selectedUser = users[indexPath.row]
         let channel = ChannelModel(contacts: [selectedUser.uid, currentUser.uid])
-        
-        FirestoreService.manager.startChannel(Channel: channel, users: [currentUser.uid, selectedUser.uid]){ (result) in
+        FirestoreService.manager.checkChannel(users: [currentUser.uid, selectedUser.uid]){ (result) in
             switch result{
             case .failure(let error):
                 print(error)
             case .success(()):
-                print("e")
+               print("yeah")
             }
         }
         self.navigationController?.pushViewController(chatLogVC, animated: true)

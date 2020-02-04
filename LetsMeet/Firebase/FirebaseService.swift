@@ -97,32 +97,15 @@ class FirestoreService {
         }
     }
 
-     func startChannel(Channel: ChannelModel,users: [String], completion: @escaping (Result<(), Error>) -> ()){
-        var saveChannels: [ChannelModel]?
-        db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContains: users.description).getDocuments { (snapshot, error) in
-            if let error = error{
-                completion(.failure(error))
-            }else {
-                let channels = snapshot?.documents.compactMap({ (snapshot) -> ChannelModel? in
-                    let channelID = snapshot.documentID
-                    let newChannel = ChannelModel(from: snapshot.data(), id: channelID)
-                    return newChannel
-                })
-                saveChannels = channels
-            }
-            
-                guard let checkChannels = saveChannels else{
-                    return
-                }
-                print(checkChannels.isEmpty)
-                print(checkChannels.count)
-                if checkChannels.isEmpty{
-                    print(checkChannels)
-                    self.db.collection(FireStoreCollections.channel.rawValue).addDocument(data: Channel.fieldsDict)
-                }
+     func checkChannel(users: [String], completion: @escaping (Result<(), Error>) -> ()){
+        db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContainsAny: users).getDocuments { (snapshot, error) in
+            if let snap = snapshot{
                 completion(.success(()))
-            }
-        }
+            }else {
+               if let error = error{
+                completion(.failure(error))
+                }}
+        }}
         private init () {}
 }
 
@@ -132,3 +115,25 @@ class FirestoreService {
     //        startChannel(users: users)
     //        let field = message.fieldsDict
     //}
+//func startChannel(Channel: ChannelModel,users: [String], completion: @escaping (Result<(), Error>) -> ()){
+//var saveChannels: [ChannelModel]?
+//db.collection(FireStoreCollections.channel.rawValue).whereField("contacts", arrayContains: users.description).getDocuments { (snapshot, error) in
+//    if let error = error{
+//        completion(.failure(error))
+//    }else {
+//        let channels = snapshot?.documents.compactMap({ (snapshot) -> ChannelModel? in
+//            let channelID = snapshot.documentID
+//            let newChannel = ChannelModel(from: snapshot.data(), id: channelID)
+//            return newChannel
+//        })
+//        saveChannels = channels
+//    }
+//        guard let checkChannels = saveChannels else{
+//            return
+//        }
+//        if checkChannels.isEmpty{
+//            self.db.collection(FireStoreCollections.channel.rawValue).addDocument(data: Channel.fieldsDict)
+//        }
+//        completion(.success(()))
+//    }
+//}

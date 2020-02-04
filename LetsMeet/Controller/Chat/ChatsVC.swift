@@ -25,8 +25,6 @@ class ChatsVC: UITableViewController {
                return button
            }()
    
-
-
     //MARK: - Objc Functions
     @objc private func segueToMessageVC(){
     let newMessageVC = NewMessageVC()
