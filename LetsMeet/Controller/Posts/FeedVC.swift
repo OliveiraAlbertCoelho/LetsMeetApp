@@ -86,6 +86,7 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = feedTableVC.dequeueReusableCell(withIdentifier: "postsCell", for: indexPath) as? PostTableViewCell else{ return UITableViewCell()}
         let data = posts[indexPath.row]
+        cell.userNameLabel.text = currentUser?.userName ?? ""
         cell.postContentLabel.text = data.postContent ?? ""
         FirebaseStorage.profilemanager.getImages(profileUrl: (currentUser?.photoURL)!) { (result) in
             switch result{

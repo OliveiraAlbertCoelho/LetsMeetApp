@@ -20,18 +20,22 @@ class PostTableViewCell: UITableViewCell {
        }
     lazy var userNameLabel: UILabel = {
         let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     lazy var postContentLabel: UILabel = {
         let textview = UILabel()
         textview.numberOfLines = 0
-        textview.font = UIFont(name: "Courier", size: 20)!
+        textview.font = UIFont(name: "Menlo", size: 20)!
         return textview
     }()
     lazy var userProfileImage: UIImageView = {
         let view = UIImageView()
+        view.layer.cornerRadius = 35
+        view.layer.masksToBounds = true
         return view
     }()
+    lazy 
     
     private func constrainView(){
         userProfileImageConstraint()
@@ -44,10 +48,10 @@ class PostTableViewCell: UITableViewCell {
         contentView.addSubview(userProfileImage)
         userProfileImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            userProfileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            userProfileImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            userProfileImage.heightAnchor.constraint(equalToConstant: 50),
-            userProfileImage.widthAnchor.constraint(equalToConstant: 50)
+            userProfileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            userProfileImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            userProfileImage.heightAnchor.constraint(equalToConstant: 70),
+            userProfileImage.widthAnchor.constraint(equalToConstant: 70)
         ])
     }
     private func constrainUserName(){
@@ -57,7 +61,7 @@ class PostTableViewCell: UITableViewCell {
             userNameLabel.leadingAnchor.constraint(equalTo: userProfileImage.trailingAnchor, constant: 10),
             userNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             userNameLabel.heightAnchor.constraint(equalToConstant: 20),
-            userNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
+            userNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10)
         
         ])
     }
@@ -65,10 +69,10 @@ class PostTableViewCell: UITableViewCell {
         contentView.addSubview(postContentLabel)
         postContentLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            postContentLabel.topAnchor.constraint(equalTo: userProfileImage.bottomAnchor, constant: 0),
-            postContentLabel.leadingAnchor.constraint(equalTo: userProfileImage.trailingAnchor, constant: 0),
-            postContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10 ),
-            postContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
+            postContentLabel.topAnchor.constraint(equalTo: userProfileImage.bottomAnchor, constant: 10),
+            postContentLabel.leadingAnchor.constraint(equalTo: userProfileImage.trailingAnchor, constant: 10),
+            postContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            postContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }
 
