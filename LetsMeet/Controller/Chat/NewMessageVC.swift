@@ -89,14 +89,14 @@ extension NewMessageVC: UITableViewDelegate, UITableViewDataSource{
         let chatLogVC = ChatLogController()
         let selectedUser = users[indexPath.row]
         let channel = ChannelModel(contacts: [selectedUser.uid, currentUser.uid])
-        FirestoreService.manager.checkChannel(users: [currentUser.uid, selectedUser.uid]){ (result) in
-            switch result{
-            case .failure(let error):
-                print(error)
-            case .success(()):
-               print("yeah")
-            }
-        }
+//        FirestoreService.manager.checkChannel(users: [currentUser.uid, selectedUser.uid]){ (result) in
+//            switch result{
+//            case .failure(let error):
+//                print(error)
+//            case .success(()):
+//               print("yeah")
+//            }
+//        }
         self.navigationController?.pushViewController(chatLogVC, animated: true)
     }
 }
