@@ -14,6 +14,7 @@ class CreatePostVC: UIViewController {
            super.viewDidLoad()
             setUpView()
         setUpConstraints()
+        view.backgroundColor = #colorLiteral(red: 0.6731152534, green: 0.7866873145, blue: 0.8883451819, alpha: 1)
     }
     var currentUser: AppUser?
     //MARK: - Variables
@@ -23,20 +24,42 @@ class CreatePostVC: UIViewController {
         label.text = "Set up and event"
         label.font = .systemFont(ofSize: 25)
         return label
+        
     }()
     lazy var userPostInput: UITextView = {
         let text = UITextView()
         text.font = .systemFont(ofSize: 20)
+        text.backgroundColor = .clear
         return text
+        
     }()
    
     lazy var postButton: UIButton = {
         let button = UIButton()
         button.setTitle("Post", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(postAction), for: .touchUpInside)
         return button
     }()
+    lazy var cameraButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "camera"), for: .normal)
+        return button
+    }()
+    lazy var libraryButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "folder"), for: .normal)
+        return button
+    }()
+    lazy var photoStack: UIStackView = {
+          let stack = UIStackView(arrangedSubviews: [cameraButton,libraryButton])
+                   stack.axis = .horizontal
+                   stack.spacing = 1
+                   stack.distribution = .fillEqually
+        return stack
+    }()
+    
     
     
     //MARK: - Objc Functions
@@ -59,8 +82,8 @@ class CreatePostVC: UIViewController {
     
     private func setUpConstraints(){
         constrainPostLabel()
-        constrainUserInput()
         constrainPostButton()
+           constrainUserInput()
     }
     //MARK: - Constraints
     private func constrainPostLabel(){
@@ -80,7 +103,7 @@ class CreatePostVC: UIViewController {
             userPostInput.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             userPostInput.topAnchor.constraint(equalTo: postLabel.bottomAnchor, constant: 10),
             userPostInput.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            userPostInput.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            userPostInput.bottomAnchor.constraint(equalTo: postButton.topAnchor)
         ])
     }
     private func constrainPostButton(){

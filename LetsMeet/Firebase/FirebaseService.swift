@@ -132,9 +132,6 @@ class FirestoreService {
     }
     }
         private init () {}
-
-
-
 }
     //    }
     //    func startMessage(users:[String], message: MessageModel,  completion: @escaping (Result<(), Error>) -> ()){

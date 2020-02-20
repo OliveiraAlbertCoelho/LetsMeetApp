@@ -37,6 +37,7 @@ class FeedVC: UIViewController {
     }()
     lazy var feedTableVC: UITableView = {
         let layout = UITableView()
+        layout.separatorColor = .clear
         layout.register(PostTableViewCell.self, forCellReuseIdentifier: "postsCell")
         layout.backgroundColor = .clear
         layout.delegate = self
@@ -78,6 +79,7 @@ class FeedVC: UIViewController {
         ])
     }
 }
+//MARK: - UITableViewDelegates
 extension FeedVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -100,7 +102,5 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource{
         cell.postContentLabel.layoutIfNeeded()
         return cell
     }
-    
-    
     
 }

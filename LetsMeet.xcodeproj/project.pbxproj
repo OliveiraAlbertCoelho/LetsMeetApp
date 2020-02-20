@@ -30,6 +30,7 @@
 		5037ACC8238D9FCC00067EFA /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5037ACC7238D9FCC00067EFA /* FirebaseStorage.swift */; };
 		504A528E239F435D0053661F /* ChatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A528D239F435D0053661F /* ChatsVC.swift */; };
 		504A5290239F48BF0053661F /* NewMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A528F239F48BF0053661F /* NewMessageVC.swift */; };
+		5087C9B223EC846E0051B8BE /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087C9B123EC846E0051B8BE /* Protocol.swift */; };
 		5087D9C123A1CFCA000B2F69 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C023A1CFCA000B2F69 /* FeedVC.swift */; };
 		5087D9C323A1D0FF000B2F69 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */; };
 		5087D9C523A1D462000B2F69 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5087D9C423A1D462000B2F69 /* PostModel.swift */; };
@@ -75,6 +76,7 @@
 		5037ACC7238D9FCC00067EFA /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		504A528D239F435D0053661F /* ChatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVC.swift; sourceTree = "<group>"; };
 		504A528F239F48BF0053661F /* NewMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageVC.swift; sourceTree = "<group>"; };
+		5087C9B123EC846E0051B8BE /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		5087D9C023A1CFCA000B2F69 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		5087D9C423A1D462000B2F69 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		5037AC8A238D9A3D00067EFA /* LetsMeet */ = {
 			isa = PBXGroup;
 			children = (
+				5087C9B023EC84590051B8BE /* Protocol */,
 				503223AA23A09D49009A9BCA /* Views */,
 				5037ACB2238D9D1200067EFA /* Firebase */,
 				5037ACB1238D9D0900067EFA /* Supporting */,
@@ -247,6 +250,14 @@
 				5087D9C223A1D0FF000B2F69 /* CreatePostVC.swift */,
 			);
 			path = Posts;
+			sourceTree = "<group>";
+		};
+		5087C9B023EC84590051B8BE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5087C9B123EC846E0051B8BE /* Protocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		A28012D01F56C18FB6031396 /* Pods */ = {
@@ -434,6 +445,7 @@
 				5087D9C123A1CFCA000B2F69 /* FeedVC.swift in Sources */,
 				5037ACBE238D9E5E00067EFA /* UserProfileVC.swift in Sources */,
 				504A5290239F48BF0053661F /* NewMessageVC.swift in Sources */,
+				5087C9B223EC846E0051B8BE /* Protocol.swift in Sources */,
 				5037AC8C238D9A3D00067EFA /* AppDelegate.swift in Sources */,
 				500E495C238DA40800D26BD2 /* AppUser.swift in Sources */,
 				5037ACC2238D9F5D00067EFA /* CheckEmail&Pass.swift in Sources */,

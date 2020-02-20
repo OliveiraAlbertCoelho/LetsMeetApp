@@ -35,6 +35,7 @@ class UsersMessageCell: UITableViewCell {
             label.numberOfLines = 0
             return label
         }()
+       
         
       //MARK: - Regular Functions
         private func setUpContentView(){
